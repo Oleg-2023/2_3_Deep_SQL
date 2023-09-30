@@ -12,7 +12,7 @@
 	where s.CustomerTotalSum > (select avg(CustomerTotalSum) from CustomerSums)
   )
   
--- 
+-- итоговый запрос
 select l.LastName, l.FirstName, o.OrderID, o.TotalAmount, l.CustomerTotalSum
 from Orders o 
   left inner join Liders l on  l.CustomerID = o.CustomerID
